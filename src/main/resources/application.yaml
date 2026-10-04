@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: catalogue
+
+server:
+  port: 8081
