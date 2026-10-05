@@ -1,5 +1,5 @@
 pipeline {
-    
+
     agent any
 
     stages {
@@ -19,6 +19,12 @@ pipeline {
         stage('build'){
             steps {
                 sh './mvnw clean install'
+            }
+        }
+
+        stage('Build Docker Image'){
+            steps {
+                sh 'docker build -t product-catalogue-service:1.0.0 .'
             }
         }
     }
