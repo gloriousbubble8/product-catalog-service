@@ -28,6 +28,12 @@ pipeline {
             }
         }
 
+        stage('Docker Tag'){
+            steps {
+                sh 'docker tag product-catalogue-service $DOCKER_USERNAME/product-catalogue-service:1.0.0'
+            }
+        }
+
         stage('Docker Login'){
             steps {
                     withCredentials(
