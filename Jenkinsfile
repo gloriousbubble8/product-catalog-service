@@ -51,5 +51,11 @@ pipeline {
                     }
             }
         }
+
+        stage('Docker Push'){
+            steps{
+                sh 'docker push giridhar8888/product-catalogue-service:1.0.0'
+            }
+        }
     }
 }
