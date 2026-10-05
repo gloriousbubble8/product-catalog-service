@@ -30,7 +30,7 @@ pipeline {
 
         stage('Docker Tag'){
             steps {
-                sh 'docker tag product-catalogue-service $DOCKER_USERNAME/product-catalogue-service:1.0.0'
+                sh 'docker tag product-catalogue-service giridhar8888/product-catalogue-service:1.0.0'
             }
         }
 
