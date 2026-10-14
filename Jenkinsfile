@@ -75,14 +75,14 @@ pipeline {
                           --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
                           --token="$K8S_TOKEN" \
                           --namespace=dev \
-                          apply -f deployment.yml
+                          apply -f product-catalogue-deployment.yml
 
                         kubectl \
                           --server=https://kubernetes.docker.internal:6443 \
                           --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
                           --token="$K8S_TOKEN" \
                           --namespace=dev \
-                          apply -f service.yml
+                          apply -f product-catalogue-service.yml
 
                         kubectl \
                           --server=https://kubernetes.docker.internal:6443 \
