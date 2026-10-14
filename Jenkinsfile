@@ -57,5 +57,44 @@ pipeline {
                 sh 'docker push giridhar8888/product-catalogue-service:1.0.0'
             }
         }
+
+        stage('Deploy to Kubernetes'){
+            steps {
+
+                withCredentials([
+                    string(
+                        credentialsId: 'kubernetes-dev-token',
+                        variable: 'K8S_TOKEN'
+                    )
+                ]) {
+                    sh '''
+                        set +x
+
+                        kubectl \
+                          --server=https://kubernetes.docker.internal:6443 \
+                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
+                          --token="$K8S_TOKEN" \
+                          --namespace=dev \
+                          apply -f deployment.yml
+
+                        kubectl \
+                          --server=https://kubernetes.docker.internal:6443 \
+                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
+                          --token="$K8S_TOKEN" \
+                          --namespace=dev \
+                          apply -f service.yml
+
+                        kubectl \
+                          --server=https://kubernetes.docker.internal:6443 \
+                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
+                          --token="$K8S_TOKEN" \
+                          --namespace=dev \
+                          rollout status deployment/product-catalogue \
+                          --timeout=120s
+                    '''
+                }
+                
+            }
+        }
     }
 }
