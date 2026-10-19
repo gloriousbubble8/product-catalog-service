@@ -4,7 +4,7 @@ metadata:
   name: product-catalogue
   namespace: dev
 spec:
-  replicas: 5
+  replicas: 1
   selector:
     matchLabels:
       app: product-catalogue
