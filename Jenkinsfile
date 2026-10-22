@@ -2,6 +2,12 @@ pipeline {
 
     agent any
 
+    environment {
+        IMAGE_NAME = 'giridhar8888/product-catalogue-service'
+        IMAGE_TAG = '1.0.2'
+        ENV = 'dev'
+    }
+
     stages {
 
         stage('verify'){
@@ -24,17 +30,11 @@ pipeline {
 
         stage('Build Docker Image'){
             steps {
-                sh 'docker build -t product-catalogue-service:1.0.0 .'
+                sh 'docker build -t $IMAGE_NAME:$IMAGE_TAG .'
             }
         }
 
-        stage('Docker Tag'){
-            steps {
-                sh 'docker tag product-catalogue-service:1.0.0 giridhar8888/product-catalogue-service:1.0.0'
-            }
-        }
-
-        stage('Docker Login'){
+        stage('Publish Image'){
             steps {
                     withCredentials(
                         [
@@ -46,54 +46,49 @@ pipeline {
                         ]
                     ){
                         sh '''
+                            set +x
                             echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-stdin
+                            docker push "$IMAGE_NAME:$IMAGE_TAG"
                         '''
                     }
             }
         }
 
-        stage('Docker Push'){
-            steps{
-                sh 'docker push giridhar8888/product-catalogue-service:1.0.0'
+        stage('Helm Validate'){
+            steps {
+                sh '''
+                    helm lint ./product-catalogue-chart \
+                    --values ./product-catalogue-chart/values-dev.yaml
+                '''
             }
         }
 
-        stage('Deploy to Kubernetes'){
+        stage('Helm Deploy'){
             steps {
-
-                withCredentials([
-                    string(
-                        credentialsId: 'kubernetes-dev-token',
-                        variable: 'K8S_TOKEN'
-                    )
-                ]) {
-                    sh '''
+                withCredentials(
+                    [
+                        string(
+                            credentialsId: 'kubernetes-dev-token'
+                            variable: 'K8S_TOKEN'
+                        )
+                    ]
+                ) {
+                        sh '''
                         set +x
 
-                        kubectl \
-                          --server=https://kubernetes.docker.internal:6443 \
-                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
-                          --token="$K8S_TOKEN" \
-                          --namespace=dev \
-                          apply -f product-catalogue-deployment.yml
-
-                        kubectl \
-                          --server=https://kubernetes.docker.internal:6443 \
-                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
-                          --token="$K8S_TOKEN" \
-                          --namespace=dev \
-                          apply -f product-catalogue-service.yml
-
-                        kubectl \
-                          --server=https://kubernetes.docker.internal:6443 \
-                          --certificate-authority=/var/jenkins_home/docker-desktop-ca.crt \
-                          --token="$K8S_TOKEN" \
-                          --namespace=dev \
-                          rollout status deployment/product-catalogue \
-                          --timeout=120s
+                        helm upgrade --install catalogue-dev \
+                        ./product-catalogue-chart \
+                        --namespace dev \
+                        --values ./product-catalogue-chart/values-dev.yaml \
+                        --set image.repository="$IMAGE_NAME" \
+                        --set image.tag="$IMAGE_TAG" \
+                        --kube-apiserver=https://kubernetes.docker.internal:6443 \
+                        --kube-ca-file=/var/jenkins_home/docker-desktop-ca.crt \
+                        --kube-token="$K8S_TOKEN" \
+                        --wait \
+                        --timeout 200s
                     '''
                 }
-                
             }
         }
     }
