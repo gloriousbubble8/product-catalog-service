@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class ProductCatalogueController {
     @GetMapping(path = "")
     public String getProductCatalogue() {
-        return "######## Product Catalogue Demo api is up and running #######";
+        return "######## Product Catalogue Demo api is up and running ########";
     }
 }
