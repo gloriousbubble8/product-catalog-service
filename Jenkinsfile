@@ -68,7 +68,7 @@ pipeline {
                 withCredentials(
                     [
                         string(
-                            credentialsId: 'kubernetes-dev-token'
+                            credentialsId: 'kubernetes-dev-token',
                             variable: 'K8S_TOKEN'
                         )
                     ]
