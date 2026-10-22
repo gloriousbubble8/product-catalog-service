@@ -4,7 +4,7 @@ pipeline {
 
     environment {
         IMAGE_NAME = 'giridhar8888/product-catalogue-service'
-        IMAGE_TAG = '1.0.2'
+        IMAGE_TAG = '1.0.3'
         ENV = 'dev'
     }
 
