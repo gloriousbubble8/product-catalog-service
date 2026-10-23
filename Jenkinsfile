@@ -93,7 +93,7 @@ pipeline {
                         --kube-ca-file=/var/jenkins_home/docker-desktop-ca.crt \
                         --kube-token="$K8S_TOKEN" \
                         --wait \
-                        --timeout 90s \
+                        --timeout 10m \
                         --rollback-on-failure
                     '''
                 }
