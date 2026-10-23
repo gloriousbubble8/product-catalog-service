@@ -174,3 +174,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+deploymentStrategy:
+  type: RollingUpdate
+  rollingUpdate:
+    maxSurge: 25%
+    maxUnavailable: 0
+
+progressDeadlineSeconds: 600
+revisionHistoryLimit: 10

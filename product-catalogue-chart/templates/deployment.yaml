@@ -8,6 +8,10 @@ spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
+  strategy:
+    {{- toYaml .Values.deploymentStrategy | nindent 4}}
+  progressDeadlineSeconds: {{ .Values.progressDeadlineSeconds }}
+  revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   selector:
     matchLabels:
       {{- include "product-catalogue-chart.selectorLabels" . | nindent 6 }}

@@ -59,6 +59,13 @@ pipeline {
                 sh '''
                     helm lint ./product-catalogue-chart \
                     --values ./product-catalogue-chart/values-dev.yaml
+
+                    helm template catalogue-dev ./product-catalogue-chart \
+                      --namespace dev \
+                      --values ./product-catalogue-chart/values-dev.yaml \
+                      --set image.repository="$IMAGE_NAME" \
+                      --set image.tag="$IMAGE_TAG" \
+                      > /tmp/catalogue-rendered.yaml
                 '''
             }
         }
@@ -81,7 +88,7 @@ pipeline {
                         --namespace dev \
                         --values ./product-catalogue-chart/values-dev.yaml \
                         --set image.repository="$IMAGE_NAME" \
-                        --set image.tag="rollback-lab-invalid-tag" \
+                        --set image.tag="$IMAGE_TAG" \
                         --kube-apiserver=https://kubernetes.docker.internal:6443 \
                         --kube-ca-file=/var/jenkins_home/docker-desktop-ca.crt \
                         --kube-token="$K8S_TOKEN" \
