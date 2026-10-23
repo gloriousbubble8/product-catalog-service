@@ -7,3 +7,6 @@ resources:
   limits:
     cpu: 500m
     memory: 512Mi
+
+applicationConfig:
+  SPRING_PROFILES_ACTIVE: "dev"

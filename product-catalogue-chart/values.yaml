@@ -183,3 +183,9 @@ deploymentStrategy:
 
 progressDeadlineSeconds: 600
 revisionHistoryLimit: 10
+
+applicationConfig:
+  SPRING_APPLICATION_NAME: "catalogue"
+  SERVER_PORT: "8081"
+  MANAGEMENT_ENDPOINT_HEALTH_PROBES_ENABLED: "true"
+  MANAGEMENT_ENDPOINTS_WEB_EXPOSURE_INCLUDE: "health"

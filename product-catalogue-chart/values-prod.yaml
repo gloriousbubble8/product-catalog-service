@@ -1,5 +1,8 @@
 replicaCount: 3
 
+applicationConfig:
+  SPRING_PROFILES_ACTIVE: "prod"
+
 resources:
   requests:
     cpu: 250m
