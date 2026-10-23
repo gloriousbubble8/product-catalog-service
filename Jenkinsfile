@@ -81,12 +81,13 @@ pipeline {
                         --namespace dev \
                         --values ./product-catalogue-chart/values-dev.yaml \
                         --set image.repository="$IMAGE_NAME" \
-                        --set image.tag="$IMAGE_TAG" \
+                        --set image.tag="rollback-lab-invalid-tag" \
                         --kube-apiserver=https://kubernetes.docker.internal:6443 \
                         --kube-ca-file=/var/jenkins_home/docker-desktop-ca.crt \
                         --kube-token="$K8S_TOKEN" \
                         --wait \
-                        --timeout 10m
+                        --timeout 90s \
+                        --rollback-on-failure
                     '''
                 }
             }
