@@ -48,9 +48,9 @@ spec:
             - name: http
               containerPort: {{ .Values.containerPort }}
               protocol: TCP
-          envFrom:
-            - configMapRef:
-                name: {{ include "product-catalogue-chart.fullname" . }}-config
+          # envFrom:
+          #   - configMapRef:
+          #       name: {{ include "product-catalogue-chart.fullname" . }}-config
           {{- with .Values.livenessProbe }}
           livenessProbe:
             {{- toYaml . | nindent 12 }}
