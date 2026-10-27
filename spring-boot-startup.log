@@ -35,32 +35,27 @@
 
  :: Spring Boot ::                (v4.1.1)
 
-2026-10-25T18:35:02.077+05:30  INFO 12124 --- [catalogue] [           main] c.p.catalogue.CatalogueApplication       : Starting CatalogueApplication using Java 21.0.10 with PID 12124 (C:\Users\bgiri\vscode-workspace\product-catalogue-service\target\classes started by bgiri in C:\Users\bgiri\vscode-workspace\product-catalogue-service)
-2026-10-25T18:35:02.086+05:30  INFO 12124 --- [catalogue] [           main] c.p.catalogue.CatalogueApplication       : No active profile set, falling back to 1 default profile: "default"
-2026-10-25T18:35:02.088+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.boot.SpringApplication               : Loading source class com.product.catalogue.CatalogueApplication
-2026-10-25T18:35:02.211+05:30 DEBUG 12124 --- [catalogue] [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ecee32c
-2026-10-25T18:35:05.630+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\bgiri\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.1\spring-boot-web-server-4.1.1.jar
-2026-10-25T18:35:05.630+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\bgiri\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.1\spring-boot-web-server-4.1.1.jar
-2026-10-25T18:35:05.631+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
-2026-10-25T18:35:05.684+05:30  INFO 12124 --- [catalogue] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
-2026-10-25T18:35:05.722+05:30  INFO 12124 --- [catalogue] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2026-10-25T18:35:05.722+05:30  INFO 12124 --- [catalogue] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
-2026-10-25T18:35:05.890+05:30 DEBUG 12124 --- [catalogue] [           main] b.w.c.s.WebApplicationContextInitializer : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
-2026-10-25T18:35:05.893+05:30  INFO 12124 --- [catalogue] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 3680 ms
-2026-10-25T18:35:06.183+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: webMvcObservationFilter urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
-2026-10-25T18:35:06.184+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
-2026-10-25T18:35:06.253+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.s.f.OrderedRequestContextFilter    : Filter 'requestContextFilter' configured for use
-2026-10-25T18:35:06.260+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
-2026-10-25T18:35:06.261+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
-2026-10-25T18:35:06.261+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.s.filter.OrderedFormContentFilter  : Filter 'formContentFilter' configured for use
-2026-10-25T18:35:06.678+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.a.AutoConfigurationPackages        : @EnableAutoConfiguration was declared on a class in the package 'com.product.catalogue'. Automatic @Repository and @Entity scanning is enabled.
-2026-10-25T18:35:06.927+05:30 DEBUG 12124 --- [catalogue] [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : 7 mappings in 'requestMappingHandlerMapping'
-2026-10-25T18:35:06.999+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**, /swagger-ui/**, /swagger-ui/*index.html, /swagger-ui/*swagger-initializer.js, /webjars/*swagger-ui/**, /webjars/*swagger-ui/*index.html, /webjars/*swagger-ui/5.32.11/*index.html, /webjars/*swagger-ui/*swagger-initializer.js, /webjars/*swagger-ui/5.32.11/*swagger-initializer.js] in 'resourceHandlerMapping'
-2026-10-25T18:35:07.053+05:30 DEBUG 12124 --- [catalogue] [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 2 RequestBodyAdvice, 1 ResponseBodyAdvice
-2026-10-25T18:35:07.153+05:30 DEBUG 12124 --- [catalogue] [           main] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2026-10-25T18:35:07.649+05:30  INFO 12124 --- [catalogue] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint beneath base path '/actuator'
-2026-10-25T18:35:07.886+05:30  INFO 12124 --- [catalogue] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8081 (http) with context path '/'
-2026-10-25T18:35:07.925+05:30 DEBUG 12124 --- [catalogue] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+2026-10-25T22:41:39.136+05:30  INFO 7380 --- [catalogue] [           main] c.p.catalogue.CatalogueApplication       : Starting CatalogueApplication using Java 21.0.10 with PID 7380 (C:\Users\bgiri\vscode-workspace\product-catalogue-service\target\classes started by bgiri in C:\Users\bgiri\vscode-workspace\product-catalogue-service)
+2026-10-25T22:41:39.141+05:30  INFO 7380 --- [catalogue] [           main] c.p.catalogue.CatalogueApplication       : No active profile set, falling back to 1 default profile: "default"
+2026-10-25T22:41:39.142+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.boot.SpringApplication               : Loading source class com.product.catalogue.CatalogueApplication
+2026-10-25T22:41:39.222+05:30 DEBUG 7380 --- [catalogue] [           main] ConfigServletWebServerApplicationContext : Refreshing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@42721fe
+2026-10-25T22:41:41.592+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\bgiri\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.1\spring-boot-web-server-4.1.1.jar
+2026-10-25T22:41:41.593+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : Code archive: C:\Users\bgiri\.m2\repository\org\springframework\boot\spring-boot-web-server\4.1.1\spring-boot-web-server-4.1.1.jar
+2026-10-25T22:41:41.593+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.t.s.TomcatServletWebServerFactory  : None of the document roots [src/main/webapp, public, static] point to a directory and will be ignored.
+2026-10-25T22:41:41.628+05:30  INFO 7380 --- [catalogue] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8081 (http)
+2026-10-25T22:41:41.651+05:30  INFO 7380 --- [catalogue] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-10-25T22:41:41.652+05:30  INFO 7380 --- [catalogue] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-10-25T22:41:41.737+05:30 DEBUG 7380 --- [catalogue] [           main] b.w.c.s.WebApplicationContextInitializer : Published root WebApplicationContext as ServletContext attribute with name [org.springframework.web.context.WebApplicationContext.ROOT]
+2026-10-25T22:41:41.738+05:30  INFO 7380 --- [catalogue] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 2516 ms
+2026-10-25T22:41:41.940+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: webMvcObservationFilter urls=[/*] order=-2147483647, characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2026-10-25T22:41:41.941+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: dispatcherServlet urls=[/]
+2026-10-25T22:41:41.983+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.s.f.OrderedRequestContextFilter    : Filter 'requestContextFilter' configured for use
+2026-10-25T22:41:41.989+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.w.f.ServerHttpObservationFilter      : Filter 'webMvcObservationFilter' configured for use
+2026-10-25T22:41:41.990+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.s.f.OrderedCharacterEncodingFilter : Filter 'characterEncodingFilter' configured for use
+2026-10-25T22:41:41.991+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.s.filter.OrderedFormContentFilter  : Filter 'formContentFilter' configured for use
+2026-10-25T22:41:42.026+05:30  WARN 7380 --- [catalogue] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'testAuditAutoConfiguration' defined in com.product.catalogue.CatalogueApplication: Unsatisfied dependency expressed through method 'testAuditAutoConfiguration' parameter 0: No qualifying bean of type 'com.product.catalogue.audit.AuditService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-10-25T22:41:42.030+05:30  INFO 7380 --- [catalogue] [           main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2026-10-25T22:41:42.062+05:30 DEBUG 7380 --- [catalogue] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
 
 
 ============================
@@ -684,6 +679,10 @@ Negative matches:
       Did not match:
          - @ConditionalOnAvailableEndpoint not exposed (OnAvailableEndpointCondition)
 
+   CatalogueAuditAutoConfiguration:
+      Did not match:
+         - @ConditionalOnProperty (catalogue.audit.enabled=true) found different value in property 'enabled' (OnPropertyCondition)
+
    CompositeMeterRegistryConfiguration:
       Did not match:
          - NoneNestedConditions 1 matched 1 did not; NestedCondition on CompositeMeterRegistryConfiguration.MultipleNonPrimaryMeterRegistriesCondition.SingleInjectableMeterRegistry @ConditionalOnSingleCandidate (types: io.micrometer.core.instrument.MeterRegistry; SearchStrategy: all) found a single bean 'simpleMeterRegistry'; NestedCondition on CompositeMeterRegistryConfiguration.MultipleNonPrimaryMeterRegistriesCondition.NoMeterRegistryCondition @ConditionalOnMissingBean (types: io.micrometer.core.instrument.MeterRegistry; SearchStrategy: all) found beans of type 'io.micrometer.core.instrument.MeterRegistry' simpleMeterRegistry (CompositeMeterRegistryConfiguration.MultipleNonPrimaryMeterRegistriesCondition)
@@ -1204,18 +1203,61 @@ Unconditional classes:
 
 
 
-2026-10-25T18:35:07.935+05:30  INFO 12124 --- [catalogue] [           main] c.p.catalogue.CatalogueApplication       : Started CatalogueApplication in 7.252 seconds (process running for 8.212)
-2026-10-25T18:35:08.252+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state LivenessState changed to CORRECT
-2026-10-25T18:35:08.260+05:30  WARN 12124 --- [catalogue] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-10-25T18:35:08.261+05:30  WARN 12124 --- [catalogue] [           main] o.s.core.events.SpringDocAppInitializer  : SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-10-25T18:35:08.263+05:30 DEBUG 12124 --- [catalogue] [           main] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed to ACCEPTING_TRAFFIC
-2026-10-25T19:13:35.133+05:30 DEBUG 12124 --- [catalogue] [ionShutdownHook] o.s.b.a.ApplicationAvailabilityBean      : Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC
-2026-10-25T19:13:35.137+05:30 DEBUG 12124 --- [catalogue] [ionShutdownHook] ConfigServletWebServerApplicationContext : Closing org.springframework.boot.web.server.servlet.context.AnnotationConfigServletWebServerApplicationContext@1ecee32c, started on Sun Oct 25 18:35:02 IST 2026
-2026-10-25T19:13:35.165+05:30  INFO 12124 --- [catalogue] [ionShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
-2026-10-25T19:13:35.226+05:30  INFO 12124 --- [catalogue] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-10-25T22:41:42.099+05:30 DEBUG 7380 --- [catalogue] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : Application failed to start due to an exception
+
+org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.product.catalogue.audit.AuditService' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:2304) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1732) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1658) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:912) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:546) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1360) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1192) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:565) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:525) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:333) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:371) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:331) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:196) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.instantiateSingleton(DefaultListableBeanFactory.java:1225) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingleton(DefaultListableBeanFactory.java:1191) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:1121) ~[spring-beans-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:994) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:621) ~[spring-context-7.0.9.jar:7.0.9]
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:143) ~[spring-boot-web-server-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:756) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:445) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:321) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1365) ~[spring-boot-4.1.1.jar:4.1.1]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1354) ~[spring-boot-4.1.1.jar:4.1.1]
+	at com.product.catalogue.CatalogueApplication.main(CatalogueApplication.java:17) ~[classes/:na]
+
+2026-10-25T22:41:42.105+05:30 ERROR 7380 --- [catalogue] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 0 of method testAuditAutoConfiguration in com.product.catalogue.CatalogueApplication required a bean of type 'com.product.catalogue.audit.AuditService' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.product.catalogue.audit.AuditService' in your configuration.
+
 [INFO] ------------------------------------------------------------------------
-[INFO] BUILD SUCCESS
+[INFO] BUILD FAILURE
 [INFO] ------------------------------------------------------------------------
-[INFO] Total time:  38:40 min
-[INFO] Finished at: 2026-10-25T19:13:35+05:30
+[INFO] Total time:  8.659 s
+[INFO] Finished at: 2026-10-25T22:41:42+05:30
 [INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.1:run (default-cli) on project product-catalogue-service: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException
