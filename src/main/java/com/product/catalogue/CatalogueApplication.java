@@ -1,15 +1,9 @@
 package com.product.catalogue;
 
 import java.io.IOException;
-import java.net.URL;
-import java.util.Enumeration;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import com.product.catalogue.audit.AuditService;
 
 @SpringBootApplication
 public class CatalogueApplication {
