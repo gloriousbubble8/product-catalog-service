@@ -15,6 +15,6 @@ management:
       exposure:
         include: health,beans
 
-catalogue:
-  audit:
-    enabled: false
+# catalogue:
+#   audit:
+#     enabled: false

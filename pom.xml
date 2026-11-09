@@ -31,11 +31,11 @@
     </properties>
     <dependencies>
     	
-		<dependency>
+		<!-- <dependency>
 		    <groupId>com.product.catalogue</groupId>
 		    <artifactId>catalogue-audit-autoconfigure</artifactId>
 		    <version>1.0.0</version>
-		</dependency>
+		</dependency> -->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
